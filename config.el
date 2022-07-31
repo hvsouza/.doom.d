@@ -18,8 +18,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Henrique Souza"
+      user-mail-address "henriquevieira.souza@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -33,8 +33,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 17)
-     doom-variable-pitch-font (font-spec :family "Ubuntu" :size 17))
+;;(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 17)
+;;     doom-variable-pitch-font (font-spec :family "Ubuntu" :size 17))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -44,7 +44,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-dracula)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -132,7 +132,18 @@
   )
 (show-paren-mode t)
 
+;; setting swiper in case necessary
+(use-package! swiper
+  :ensure t
+  :bind
+  (("C-s" . swiper-isearch))
+  (("C-r" . swiper-isearch-backward))
+  )
 
+;; setting custom key binding
+(map! "C-M-y" 'counsel-yank-pop)
+
+;; to flash cursor
 (use-package! beacon)
 (beacon-mode 1)
 
@@ -157,3 +168,12 @@
 ;; (add-hook 'emacs-lisp-mode-hook 'highlight-indentation-mode)
 ;; (add-hook 'c++-mode-hook 'highlight-indentation-mode)
 ;; (add-hook 'sh-mode-hook 'highlight-indentation-mode)
+
+
+;; ;; use emacs bindings in insert-mode
+;; (setq evil-disable-insert-state-bindings t)
+;; (setq evil-want-keybinding nil)
+
+(setq fancy-splash-image "~/.doom.d/doom-emacs-color2.png")
+
+(after! centaur-tabs (centaur-tabs-group-by-projectile-project))
