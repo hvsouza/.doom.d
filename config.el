@@ -187,4 +187,4 @@
 (remove-hook! 'dired-mode-hook 'dired-omit-mode)
 (map! :map dired-mode-map
       :gn "RET" 'dired-find-alternate-file
-      :gnv "^" (lambda () (interactive) (find-alternate-file "..")))
+      :gnv "-" (lambda () (interactive) (find-alternate-file "..")))
