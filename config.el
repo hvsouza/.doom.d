@@ -46,6 +46,10 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-dracula)
 
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  )
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
@@ -53,7 +57,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
-
+(setq org-hide-emphasis-markers t)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -89,8 +93,8 @@
 
 
 (setq evil-normal-state-cursor '(bar "yellow"))
-(setq-default tab-width 4)
-(setq indent-line-function 'insert-tab)
+(setq-default tab-width 2)
+;; (setq indent-line-function 'insert-tab)
 
 (load "server")
 (unless (server-running-p) (server-start))
@@ -176,4 +180,11 @@
 
 (setq fancy-splash-image "~/.doom.d/doom-emacs-color2.png")
 
-(after! centaur-tabs (centaur-tabs-group-by-projectile-project))
+;; (after! centaur-tabs (centaur-tabs-group-by-projectile-project))
+
+;; Dired, use ^ or - to go back without creating a new buffer
+;; obs: use a to go foward without creating a new buffer
+;; (add-hook 'dired-mode-hook
+;;           (lambda ()
+;;             (define-key dired-mode-map (kbd "^")
+;;               (lambda () (interactive) (find-alternate-file "..")))))
