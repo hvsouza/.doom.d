@@ -185,6 +185,7 @@
 ;; Dired, use ^ or - to go back without creating a new buffer
 ;; obs: use a to go foward without creating a new buffer
 (remove-hook! 'dired-mode-hook 'dired-omit-mode)
-(map! :map dired-mode-map
+(map! :after dired
+      :map dired-mode-map
       :gn "RET" 'dired-find-alternate-file
       :gnv "-" (lambda () (interactive) (find-alternate-file "..")))
