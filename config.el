@@ -178,7 +178,8 @@
 ;; (setq evil-disable-insert-state-bindings t)
 ;; (setq evil-want-keybinding nil)
 
-(setq fancy-splash-image "~/.doom.d/doom-emacs-color2.png")
+(setq fancy-splash-image "~/.doom.d/doom-emacs-black-hole.png")
+;; (setq fancy-splash-image "~/.doom.d/doom-emacs-color2.png")
 
 ;; (after! centaur-tabs (centaur-tabs-group-by-projectile-project))
 
