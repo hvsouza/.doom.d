@@ -182,6 +182,8 @@
 ;; (setq fancy-splash-image "~/.doom.d/doom-emacs-color2.png")
 
 ;; (after! centaur-tabs (centaur-tabs-group-by-projectile-project))
+(after! centaur-tabs
+  (setq centaur-tabs-set-bar 'right))
 
 ;; Dired, use ^ or - to go back without creating a new buffer
 ;; obs: use a to go foward without creating a new buffer
