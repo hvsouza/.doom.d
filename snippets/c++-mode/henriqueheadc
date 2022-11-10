@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: henriqueheadc
+# key: /hhc
+# --
+
+// ________________________________________ //
+// Author: Henrique Souza
+// Filename: `(file-name-nondirectory (buffer-file-name))`
+// Created: `(format-time-string "%Y-%m-%d")`
+// ________________________________________ //

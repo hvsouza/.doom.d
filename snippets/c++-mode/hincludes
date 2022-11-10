@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: hincludes
+# key: /hh
+# --
+
+
+#define memorydepth ${1:5000}
+#include "/home/henrique/Dropbox/APC_Paris/Root/cold_box_analysis/class/MYCODES.h"
