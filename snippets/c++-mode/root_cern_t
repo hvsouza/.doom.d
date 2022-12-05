@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: root_cern_t
+# key: T
+# --
+
+${1:TCanvas} *${2:c} = new $1("${3:$2}");

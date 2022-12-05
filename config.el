@@ -93,7 +93,12 @@
 
 
 (setq evil-normal-state-cursor '(bar "yellow"))
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(setq custom-tab-width 2)
+;; (setq-default python-indent-offset custom-tab-width)
+(setq-default c-indentation-style custom-tab-width)
+(setq c-basic-offset 2)
 ;; (setq indent-line-function 'insert-tab)
 
 (load "server")
