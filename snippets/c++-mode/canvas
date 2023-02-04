@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: canvas
+# key: TCanvas
+# --
+
+${1:TCanvas} *${2:c} = new $1("${3:$2}", "${3:$2}",1920,0,1920,1080);

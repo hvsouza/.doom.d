@@ -92,7 +92,7 @@
 ;; they are implemented.
 
 
-(setq evil-normal-state-cursor '(bar "yellow"))
+(setq evil-normal-state-cursor '(block "yellow"))
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq custom-tab-width 2)
