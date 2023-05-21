@@ -52,7 +52,8 @@
   )
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+;; (setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -91,6 +92,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(map! "C-x C-a" #'align) ;; keybind to align text
+
+;; (map! :n "j" #'evil-next-visual-line
+;;       :n "k" #'evil-previous-visual-line)
 
 (setq evil-normal-state-cursor '(block "yellow"))
 (setq-default indent-tabs-mode nil)
@@ -111,6 +116,9 @@
 ;;   :ensure t
 ;;   :config (which-key-mode))
 
+;; Trying to make undo tree persistant
+(setq undo-tree-auto-save-history t)
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 ;; To fix undo tree from showing on the left..
 (defadvice! +popup--use-popup-window-for-undo-tree-visualizer-a (fn &rest args)
   :around #'undo-tree-visualize
@@ -170,6 +178,11 @@
 (setq org-export-with-broken-links 'mark)
 
 (add-hook 'org-mode-hook 'visual-line-mode)
+
+
+;; prevent o to keep comment
+(setq +evil-want-o/O-to-continue-comments nil)
+
 
 ;; setq highlight-indentation-overlay-string "|")
 ;; (highlight-indentation-mode t)
