@@ -120,12 +120,12 @@
 (setq undo-tree-auto-save-history t)
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 ;; To fix undo tree from showing on the left..
-(defadvice! +popup--use-popup-window-for-undo-tree-visualizer-a (fn &rest args)
-  :around #'undo-tree-visualize
-  (if undo-tree-visualizer-diff
-      (apply fn args)
-    (letf! ((#'switch-to-buffer-other-window #'pop-to-buffer))
-      (apply fn args))))
+;; (defadvice! +popup--use-popup-window-for-undo-tree-visualizer-a (fn &rest args)
+;;   :around #'undo-tree-visualize
+;;   (if undo-tree-visualizer-diff
+;;       (apply fn args)
+;;     (letf! ((#'switch-to-buffer-other-window #'pop-to-buffer))
+;;       (apply fn args))))
 
 ; show parentheses stuff
 (show-paren-mode 1)
