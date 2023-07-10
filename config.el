@@ -210,3 +210,9 @@
       :map dired-mode-map
       :gn "RET" 'dired-find-alternate-file
       :gnv "-" (lambda () (interactive) (find-alternate-file "..")))
+
+
+
+;; For undo tree with jupyter notebook
+(setq global-undo-tree-mode t)
+;; (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
